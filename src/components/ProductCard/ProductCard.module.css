@@ -29,8 +29,7 @@
 }
 
 .image {
-    width: 110px;
-    height: auto;
+    object-fit: cover;
     margin-bottom: 14px;
 }
 
@@ -70,9 +69,18 @@
 .addButton {
     border: 1px solid #F2F2F2;
     background-color: white;
-    padding: 8px;
+    padding: 5px;
     border-radius: 8px;
     cursor: pointer;
     color: #D3D3D3;
 
+}
+
+.addedButton {
+    border: 1px solid #45a045;
+    background-color: #45a04577;
+    padding: 5px;
+    border-radius: 8px;
+    cursor: pointer;
+    color: white;
 }
