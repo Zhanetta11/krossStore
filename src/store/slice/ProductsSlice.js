@@ -45,18 +45,7 @@ const productsSlice = createSlice({
         status: null,
         error: null,
     },
-    reducers: {
-        // addProduct(state, action) {
-        //     state.products.push(action.payload.data)
-        // },
-        // toggleInBasket(state, action) {
-        //     const toggleProduct = state.products.find(el => el.id === action.payload.id)
-        //     toggleProduct.inBasket = !toggleProduct.inBasket
-        // },
-        // removeProduct(state, action) {
-        //     state.products = state.products.filter(item => item.id !== action.payload.id)
-        // }
-    },
+    reducers: {},
     extraReducers: ({ addCase }) => {
         addCase(fetchGetAllProducts.pending, (state) => {
             state.loading = true

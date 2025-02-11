@@ -19,10 +19,18 @@ const cartSlice = createSlice({
             }
 
             state.totalPrice = state.cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
-            state.tax = state.totalPrice * 0.05; 
+            state.tax = state.totalPrice * 0.05;
         },
         removeFromCart(state, action) {
-            state.cartItems = state.cartItems.filter((item) => item.id !== action.payload);
+            const itemIndex = state.cartItems.findIndex((item) => item.id === action.payload);
+
+            if (itemIndex !== -1) {
+                if (state.cartItems[itemIndex].quantity > 1) {
+                    state.cartItems[itemIndex].quantity -= 1; 
+                } else {
+                    state.cartItems.splice(itemIndex, 1); 
+                }
+            }
 
             state.totalPrice = state.cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
             state.tax = state.totalPrice * 0.05;

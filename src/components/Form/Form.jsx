@@ -15,7 +15,7 @@ const Form = () => {
         e.preventDefault();
         if (name.trim()) {
             dispatch(fetchByProductName(name));
-            setName(''); // Clear input after search
+            setName(''); 
         }
     };
 

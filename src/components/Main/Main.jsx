@@ -11,7 +11,7 @@ const Main = () => {
     useEffect(() => {
         dispatch(fetchGetAllProducts());
     }, [dispatch]);
-    
+
     return (
         <div className={styles.container}>
             <div className={styles.main_top}>
