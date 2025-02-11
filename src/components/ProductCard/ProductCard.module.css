@@ -1,0 +1,78 @@
+.card {
+    min-width: 210px;
+    min-height: 226px;
+    background: white;
+    padding: 30px;
+    border-radius: 40px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+    box-sizing: border-box;
+    transition: box-shadow 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.card:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+}
+
+.favorite {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    border: 1px solid #F2F2F2;
+    background-color: white;
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #D3D3D3;
+}
+
+.image {
+    width: 110px;
+    height: auto;
+    margin-bottom: 14px;
+}
+
+.name {
+    font-size: 16px;
+    margin-bottom: 14px;
+    font-weight: 500;
+}
+
+.card_bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card_price {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.price {
+    font-size: 14px;
+    color: #BDBDBD;
+    margin: 0;
+}
+
+.price_name {
+    font-weight: 700;
+    font-size: 14px;
+    color: black;
+    margin: 0;
+}
+
+.addButton {
+    border: 1px solid #F2F2F2;
+    background-color: white;
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #D3D3D3;
+
+}
