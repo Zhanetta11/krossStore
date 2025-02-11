@@ -38,47 +38,6 @@ export const fetchByProductName = createAsyncThunk(
     }
 )
 
-// export const fetchByRemoveProducts = createAsyncThunk(
-//     'products/fetchByRemoveProducts',
-
-//     async (id, { rejectWithValue, dispatch }) => {
-//         try {
-//             const res = await axios.delete(``)
-//             // console.log(res);
-
-//             if (res.status !== 200) {
-//                 throw new Error("Can't delete the product")
-//             }
-
-//             dispatch(removeProduct({ id }))
-
-//         } catch (error) {
-//             return rejectWithValue(error)
-//         }
-//     }
-// )
-
-// export const fetchByToggleStatus = createAsyncThunk(
-//     'products/fetchByToggleStatus',
-
-//     async (id, { rejectWithValue, dispatch, getState }) => {
-//         const product = getState().products.products.find(item => item.id === id)
-//         try {
-//             const res = await axios.patch(``, { inBasket: !product.inBasket })
-//             // console.log(res)
-
-//             if (res.status !== 200) {
-//                 throw new Error("Can't update the product")
-//             }
-
-//             dispatch(toggleInBasket({ id }))
-
-//         } catch (error) {
-//             return rejectWithValue(error)
-//         }
-//     }
-// )
-
 const productsSlice = createSlice({
     name: 'products',
     initialState: {
