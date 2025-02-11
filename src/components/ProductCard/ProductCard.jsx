@@ -17,7 +17,7 @@ const ProductCard = ({ product }) => {
                     <p className={styles.price}>Цена:</p>
                     <p className={styles.price_name}>{product.price}</p>
                 </div>
-                <button  className={styles.addButton} onClick={() => dispatch(addToCart(product))}>  <AddIcon /></button>
+                <button className={styles.addButton} onClick={() => dispatch(addToCart(product))}>  <AddIcon /></button>
             </div>
         </div>
     );

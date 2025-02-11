@@ -3,8 +3,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { removeFromCart } from "../../store/slice/CartSlice";
 import styles from "./Cart.module.css";
 import CloseIcon from '@mui/icons-material/Close';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import emptyCartImage from "../../assets/img/cart.svg";
 
-const Cart = () => {
+const Cart = ({ onClose }) => {
     const { cartItems, totalPrice, tax } = useSelector((state) => state.cart);
     const dispatch = useDispatch();
 
@@ -21,9 +23,10 @@ const Cart = () => {
                                 <div className={styles.info}>
                                     <h3 className={styles.itemTitle}>{item.title}</h3>
                                     <p className={styles.price}>{item.price} руб.</p>
+                                    <p className={styles.price}>Количество: {item.quantity}</p>
                                 </div>
-                                <button 
-                                    className={styles.removeButton} 
+                                <button
+                                    className={styles.removeButton}
                                     onClick={() => dispatch(removeFromCart(item.id))}
                                 >
                                     <CloseIcon />
@@ -39,7 +42,15 @@ const Cart = () => {
                     </div>
                 </>
             ) : (
-                <h3 className={styles.empty}>Корзина пустая</h3>
+                <div className={styles.emptyCart}>
+                    <img src={emptyCartImage} alt="Пустая корзина" />
+                    <h3>Корзина пустая</h3>
+                    <p>Добавьте хотя бы одну пару кроссовок, чтобы сделать заказ.</p>
+                    <button className={styles.back} onClick={onClose}>
+                        <ArrowBackIcon />
+                        Вернуться назад
+                    </button>
+                </div>
             )}
         </div>
     );
