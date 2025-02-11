@@ -3,6 +3,7 @@ import styles from "./ProductCard.module.css";
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import AddIcon from '@mui/icons-material/Add';
 import { useDispatch } from "react-redux";
+import { addToCart } from "../../store/slice/CartSlice";
 
 const ProductCard = ({ product }) => {
     const dispatch = useDispatch()
@@ -16,9 +17,7 @@ const ProductCard = ({ product }) => {
                     <p className={styles.price}>Цена:</p>
                     <p className={styles.price_name}>{product.price}</p>
                 </div>
-                <button className={styles.addButton}>
-                    <AddIcon />
-                </button>
+                <button  className={styles.addButton} onClick={() => dispatch(addToCart(product))}>  <AddIcon /></button>
             </div>
         </div>
     );
