@@ -1,13 +1,16 @@
-import React from 'react';
-
+import React, { useState } from 'react';
 import styles from './Header.module.css'
 import LocalGroceryStoreOutlinedIcon from '@mui/icons-material/LocalGroceryStoreOutlined';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import logo from '../../assets/img/logo.svg'
-import { Link } from 'react-router-dom';
+import Cart from '../Cart/Cart';
+import { useSelector } from 'react-redux';
 
 const Header = () => {
+    const [isCartOpen, setIsCartOpen] = useState(false);
+    const totalPrice = useSelector((state) => state.cart.totalPrice);
+
     return (
         <header className={styles.header}>
             <div className={styles.logo}>
@@ -18,9 +21,9 @@ const Header = () => {
                 </div>
             </div>
             <div className={styles.menu}>
-                <div className={styles.cart}>
+                <div className={styles.cart} onClick={() => setIsCartOpen(true)}>
                     <LocalGroceryStoreOutlinedIcon className={styles.icon} />
-                    <span>1205 руб.</span>
+                    <span>{totalPrice} руб.</span>
                 </div>
                 <div className={styles.cart}>
                     <FavoriteBorderOutlinedIcon className={styles.icon} />
@@ -30,6 +33,7 @@ const Header = () => {
                     <span>Профиль</span>
                 </div>
             </div>
+            {isCartOpen && <Cart />}
         </header>
     );
 };
